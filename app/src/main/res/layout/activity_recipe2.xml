@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RecipeActivity2">
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="About this recipe"
+        android:background="@color/white"
+        android:fontFamily="@font/font"
+        android:textColor="@color/black"
+        android:textSize="30dp"></TextView>
+    <TextView
+        android:id="@+id/text"
+        android:layout_alignBottom="@id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp"
+        android:background="@color/white"
+        android:fontFamily="@font/font"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="15dp"></TextView>
+
+
+
+
+
+
+
+
+</RelativeLayout>
