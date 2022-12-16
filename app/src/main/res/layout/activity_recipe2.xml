@@ -6,27 +6,41 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".RecipeActivity2">
+<TextView
+    android:id="@+id/name"
+    android:text="recipe"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:textSize="30dp"
+    android:fontFamily="@font/font"></TextView>
+    <ImageView
+        android:id="@+id/image"
+        android:layout_alignBottom="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        ></ImageView>
     <TextView
         android:id="@+id/heading"
+        android:layout_alignBottom="@id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="About this recipe"
         android:background="@color/white"
+        android:layout_marginTop="200dp"
         android:fontFamily="@font/font"
         android:textColor="@color/black"
         android:textSize="30dp"></TextView>
     <TextView
         android:id="@+id/text"
-        android:layout_alignBottom="@id/heading"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/font"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="35dp"
-        android:background="@color/white"
-        android:fontFamily="@font/font"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="15dp"></TextView>
+        android:layout_marginTop="450dp"></TextView>
+
 
 
 
