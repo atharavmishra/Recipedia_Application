@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -12,6 +12,12 @@
         android:outlineAmbientShadowColor="@color/black"
         app:cardCornerRadius="20dp"
         android:layout_marginBottom="25dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="200dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/image"></ImageView>
 
         <ImageView
             android:id="@+id/image"
@@ -20,7 +26,8 @@
             android:scaleType="centerCrop">
 
         </ImageView>
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="210dp"
             android:layout_marginLeft="200dp"
             android:layout_height="match_parent">
@@ -29,27 +36,30 @@
                 android:layout_width="wrap_content"
                 android:textStyle="bold"
                 android:textSize="20dp"
+                android:fontFamily="@font/font"
                 android:textColor="@color/black"
                 android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"></TextView>
             <TextView
+                android:fontFamily="@font/font"
                 android:id="@+id/minutes"
                 android:layout_width="wrap_content"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:textSize="15dp"
-                android:layout_marginTop="70dp"
                 android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"></TextView>
             <TextView
+                android:fontFamily="@font/font"
+                android:textColor="@color/white"
                 android:id="@+id/servings"
                 android:layout_width="wrap_content"
                 android:textStyle="bold"
                 android:textSize="15dp"
-                android:layout_marginTop="150dp"
                 android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"></TextView>
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

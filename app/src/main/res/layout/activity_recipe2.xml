@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".RecipeActivity2">
-<TextView
+    android:background="@drawable/image2"
+   >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RecipeActivity2"
+        android:orientation="vertical">
+
+        <TextView
     android:id="@+id/name"
     android:text="recipe"
     android:layout_width="wrap_content"
@@ -19,7 +25,7 @@
         android:layout_alignBottom="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         ></ImageView>
     <TextView
         android:id="@+id/heading"
@@ -27,8 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="About this recipe"
-        android:background="@color/white"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/font"
         android:textColor="@color/black"
         android:textSize="30dp"></TextView>
@@ -37,16 +42,31 @@
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/font"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/ingredient"
         android:textColor="@color/black"
-        android:layout_marginTop="450dp"></TextView>
+        android:layout_alignParentBottom="true"
+        android:textSize="30dp"
+        android:text="Ingredients"
+        android:fontFamily="@font/font"
+        android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/ingredients"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:textSize="30dp"
+            android:fontFamily="@font/font"
+            android:layout_height="wrap_content"></TextView>
+
+
+
+    </LinearLayout>
 
 
 
 
-
-
-
-
-
-</RelativeLayout>
+</ScrollView>

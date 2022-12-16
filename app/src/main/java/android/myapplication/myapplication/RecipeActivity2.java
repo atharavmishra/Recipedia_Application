@@ -21,7 +21,7 @@ public class RecipeActivity2 extends AppCompatActivity {
     TextView textview ;
     ImageView imageView;
     TextView name;
-
+    String ingredients ="";
 
 
     @Override
@@ -34,9 +34,16 @@ public class RecipeActivity2 extends AppCompatActivity {
         name = findViewById(R.id.name);
         arraylist=intent.getParcelableArrayListExtra("Data");
         int pos = intent.getIntExtra("position", 0);
+        Instructions = arraylist.get(pos).getAnalyzedInstructions();
         textview.setText(Html.fromHtml(Html.fromHtml(arraylist.get(pos).getSummary()).toString()));
         Glide.with(this).load(arraylist.get(pos).getImage()).into(imageView);
         name.setText(arraylist.get(pos).getTitle().toString());
+        for(int i=0; i<=Instructions.get(0).getSteps().size(); i++){
+            for(int j=0; j<=Instructions.get(0).getSteps().get(i).getIngredients().size(); j++) {
+                ingredients = ingredients + Instructions.get(0).getSteps().get(i).getIngredients().get(j);
+            }
+        }
+
 
 
 
