@@ -26,6 +26,8 @@
             android:scaleType="centerCrop">
 
         </ImageView>
+
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="210dp"
@@ -59,6 +61,13 @@
                 android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"></TextView>
 
+            <ImageView
+                android:id="@+id/type"
+                android:layout_width="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="20dp">
+
+            </ImageView>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

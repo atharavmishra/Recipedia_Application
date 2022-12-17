@@ -18,6 +18,7 @@
         android:layout_margin="10dp"
         android:orientation="horizontal">
 
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -29,11 +30,7 @@
             android:textColorHint="@color/black"
             android:textStyle="bold"
             ></EditText>
-        <View
-            android:background="@android:color/darker_gray"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            />
+
 
         <ImageButton
             android:layout_width="match_parent"
@@ -46,7 +43,14 @@
             ></ImageButton>
 
 
+
     </LinearLayout>
+    <CheckBox android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu"
+        android:state_checked="false"
+       />
     <RelativeLayout
         android:id="@+id/loadingPanel"
         android:layout_width="match_parent"

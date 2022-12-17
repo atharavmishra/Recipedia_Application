@@ -37,6 +37,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         holder.textview.setText(arraylist.get(position).getTitle().toString());
         holder.time.setText("Ready in "+String.valueOf(arraylist.get(position).getReadyInMinutes())+" minutes");
         holder.servings.setText("No. Of servings = "+ arraylist.get(position).getServings());
+        if(arraylist.get(position).isVegetarian()){
+            holder.veg.setImageResource(R.drawable.veg);
+        }
+        else{
+            holder.veg.setImageResource(R.drawable.nonveg);
+        }
         holder.cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,11 +67,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         TextView time;
         CardView cardview;
         TextView servings;
+        ImageView veg;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageview= itemView.findViewById(R.id.image);
             textview = itemView.findViewById(R.id.heading);
             time = itemView.findViewById(R.id.minutes);
+            veg = itemView.findViewById(R.id.type);
             cardview = itemView.findViewById(R.id.cardview);
             servings = itemView.findViewById(R.id.servings);
 

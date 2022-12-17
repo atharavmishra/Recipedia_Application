@@ -14,14 +14,21 @@ public interface APInterface {
     @GET("complexSearch")
     Call<Root> getImage(
             @Query("apiKey") String authkey,
-            @Query("addRecipeInformation") boolean val,
-            @Query("diet") String query
+            @Query("addRecipeInformation") boolean val
+
     );
     @GET("complexSearch")
     Call<Root> getImage2(
             @Query("apiKey") String authkey,
             @Query("addRecipeInformation") boolean val,
             @Query("query") String query
+    );
+    @GET("complexSearch")
+    Call<Root> getImageveg(
+            @Query("apiKey") String authkey,
+            @Query("addRecipeInformation") boolean val,
+            @Query("diet") String diet
+
     );
 
 }
