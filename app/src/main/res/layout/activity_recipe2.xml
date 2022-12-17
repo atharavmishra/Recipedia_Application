@@ -41,6 +41,7 @@
         android:id="@+id/text"
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/font"
+        android:textSize="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"></TextView>
@@ -50,7 +51,7 @@
         android:textColor="@color/black"
         android:layout_alignParentBottom="true"
         android:textSize="30dp"
-        android:text="Ingredients"
+        android:text="How To make it"
         android:fontFamily="@font/font"
         android:layout_height="wrap_content"></TextView>
         <TextView
@@ -58,7 +59,7 @@
             android:id="@+id/ingredients"
             android:textColor="@color/black"
             android:layout_alignParentBottom="true"
-            android:textSize="30dp"
+            android:textSize="15dp"
             android:fontFamily="@font/font"
             android:layout_height="wrap_content"></TextView>
 
