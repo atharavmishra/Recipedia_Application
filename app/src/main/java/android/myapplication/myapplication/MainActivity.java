@@ -2,29 +2,24 @@ package android.myapplication.myapplication;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.myapplication.modelClass.Result;
 import android.myapplication.modelClass.Root;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -46,28 +41,30 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         if(CheckNetwork.isInternetAvailable(this)) //returns true if internet available
-        {edittext = findViewById(R.id.edittext);
+        {
+            edittext = findViewById(R.id.edittext);
             search = findViewById(R.id.search);
             recyclerview = findViewById(R.id.recyclerview);
             recyclerview.setHasFixedSize(true);
             chck = findViewById(R.id.checkbox);
-            Log.d("isclicked",String.valueOf(chck.isChecked()));
-            chck.setOnClickListener(new View.OnClickListener() {
+            chck.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+
                 @Override
-                public void onClick(View view) {
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    // TODO Auto-generated method stub
                     boolean ischecked = chck.isChecked();
                     SharedPreferences shrd = getSharedPreferences("chck", MODE_PRIVATE);
                     SharedPreferences.Editor editor = shrd.edit();
-                    editor.clear();
-                    editor.putBoolean("val",ischecked);
+                    editor.putBoolean("val", ischecked);
                     editor.apply();
                     shrd.registerOnSharedPreferenceChangeListener(MainActivity.this);
-
-
-
+                    Toast.makeText(getApplicationContext(), "Check box "+arg0.getText().toString()+" is "+String.valueOf(arg1) , Toast.LENGTH_LONG).show();
                 }
-            });
+            } );
+
 
 
 

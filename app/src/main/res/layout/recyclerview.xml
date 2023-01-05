@@ -12,12 +12,7 @@
         android:outlineAmbientShadowColor="@color/black"
         app:cardCornerRadius="20dp"
         android:layout_marginBottom="25dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="200dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/image"></ImageView>
+
 
         <ImageView
             android:id="@+id/image"

@@ -39,6 +39,7 @@ public class RecipeActivity2 extends AppCompatActivity {
         imageView = findViewById(R.id.image);
         name = findViewById(R.id.name);
         ing_list= findViewById(R.id.ingredients);
+        getSupportActionBar().hide();
         arraylist=intent.getParcelableArrayListExtra("Data");
         int pos = intent.getIntExtra("position", 0);
         Instructions = arraylist.get(pos).getAnalyzedInstructions();
