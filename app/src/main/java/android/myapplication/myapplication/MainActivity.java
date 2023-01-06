@@ -2,6 +2,7 @@ package android.myapplication.myapplication;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.myapplication.modelClass.Result;
 import android.myapplication.modelClass.Root;
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         if(CheckNetwork.isInternetAvailable(this)) //returns true if internet available
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
                         Toast.makeText(getApplicationContext(), "Please Enter something", Toast.LENGTH_LONG).show();
                     } else {
+
                         getrecipe(query);
                     }
                 }
@@ -111,10 +112,14 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         APIutilities.getAPIinterface().getImage2("61a2ba9ae7794bbe914353e4ce889564", true, query).enqueue(new Callback<Root>() {
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
+                ProgressDialog pd = new ProgressDialog(MainActivity.this);
+                pd.setMessage("loading");
+                pd.show();
                 arraylist.clear();
                 arraylist.addAll(response.body().getResults());
                 recyclerview.getRecycledViewPool().clear();
                 adapter.notifyDataSetChanged();
+                pd.hide();
                 Log.d(TAG, Integer.toString(response.code()));
                 Log.d("myTag", response.toString());
                 Log.d(TAG, Integer.toString(response.code())+(response.raw().request().url()).toString());
@@ -144,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                     arraylist.addAll(response.body().getResults());
                     recyclerview.getRecycledViewPool().clear();
                     adapter.notifyDataSetChanged();
+                    findViewById(R.id.progressBar1).setVisibility(View.GONE);
                     Log.d(TAG, Integer.toString(response.code()));
                     Log.d("myTag", response.toString());
                     Log.d(TAG, Integer.toString(response.code())+(response.raw().request().url()).toString());
