@@ -67,7 +67,7 @@ public class RecipeActivity2 extends AppCompatActivity {
                     Log.d("Tag", String.valueOf(j));
 
                 }
-                ingredients = ingredients + "\n"+Html.fromHtml("This mixes <b>bold</b> and <i>italic</i> stuff") + String.valueOf(i+1) +" - "+ Instructions.get(0).getSteps().get(i).getStep() + "\n\n\nIngredients Required for below step\n";
+                ingredients = ingredients + "\nStep" + String.valueOf(i+1) +" - "+ Instructions.get(0).getSteps().get(i).getStep() + "\n\n\nIngredients Required for below step\n";
 
             }
 

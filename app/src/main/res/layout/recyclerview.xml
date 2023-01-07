@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"></TextView>
             <TextView
                 android:fontFamily="@font/font"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:id="@+id/servings"
                 android:layout_width="wrap_content"
                 android:textStyle="bold"
