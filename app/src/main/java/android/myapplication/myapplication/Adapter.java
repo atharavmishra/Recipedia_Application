@@ -3,9 +3,12 @@ package android.myapplication.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.myapplication.modelClass.Result;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,11 +36,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
+
         Glide.with(context).load(arraylist.get(position).getImage()).into(holder.imageview);
         holder.textview.setText(arraylist.get(position).getTitle().toString());
         holder.time.setText("Ready in "+String.valueOf(arraylist.get(position).getReadyInMinutes())+" minutes");
         holder.servings.setText("No. Of servings = "+ arraylist.get(position).getServings());
-        if(arraylist.get(position).isVegetarian()){
+        if(arraylist.get(holder.getAbsoluteAdapterPosition()).isVegetarian()){
             holder.veg.setImageResource(R.drawable.veg);
         }
         else{
@@ -48,13 +52,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             public void onClick(View view) {
                 Intent intent = new Intent(context, RecipeActivity2.class);
                 intent.putParcelableArrayListExtra("Data",arraylist);
-                intent.putExtra("position",holder.getAdapterPosition());
+                intent.putExtra("position",holder.getAbsoluteAdapterPosition());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
 
+
+
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -68,6 +76,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         CardView cardview;
         TextView servings;
         ImageView veg;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageview= itemView.findViewById(R.id.image);

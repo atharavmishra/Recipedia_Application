@@ -2,6 +2,7 @@
     <string name="app_name">My Application</string>
     <string name="hint">Search your recipes here</string>
     <string name="menu">Show Only Veg</string>
+    <string name="step"> <b><i>Step</i></b> </string>
 
 
 </resources>

@@ -28,7 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class MainActivity extends AppCompatActivity{
     TextView txt;
     private RecyclerView recyclerview;
     Adapter adapter;
@@ -49,25 +49,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             search = findViewById(R.id.search);
             recyclerview = findViewById(R.id.recyclerview);
             recyclerview.setHasFixedSize(true);
-            chck = findViewById(R.id.checkbox);
-            chck.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
-
-                @Override
-                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-                    // TODO Auto-generated method stub
-                    boolean ischecked = chck.isChecked();
-                    SharedPreferences shrd = getSharedPreferences("chck", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = shrd.edit();
-                    editor.putBoolean("val", ischecked);
-                    editor.apply();
-                    shrd.registerOnSharedPreferenceChangeListener(MainActivity.this);
-                    Toast.makeText(getApplicationContext(), "Check box "+arg0.getText().toString()+" is "+String.valueOf(arg1) , Toast.LENGTH_LONG).show();
-                }
-            } );
-
-
-
-
             recyclerview.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
             findrecipe();
             adapter = new Adapter(getApplicationContext(), arraylist);
@@ -93,20 +74,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         }
 
     }
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        Log.d("tag","change invoked");
-
-        if(sharedPreferences.getBoolean(key,false)){
-            findvegrecipe();
-            Log.d("tag","method invoked");
-
-
-        }
-        if(!sharedPreferences.getBoolean(key,false)){
-            findrecipe();
-        }
-    }
 
     private void getrecipe(String query){
         APIutilities.getAPIinterface().getImage2("61a2ba9ae7794bbe914353e4ce889564", true, query).enqueue(new Callback<Root>() {
@@ -123,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                 Log.d(TAG, Integer.toString(response.code()));
                 Log.d("myTag", response.toString());
                 Log.d(TAG, Integer.toString(response.code())+(response.raw().request().url()).toString());
+
 
             }
 
@@ -200,12 +168,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             }
         });
     }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Unregister VisualizerActivity as an OnPreferenceChangedListener to avoid any memory leaks.
-        PreferenceManager.getDefaultSharedPreferences(this)
-                .unregisterOnSharedPreferenceChangeListener(this);
-    }
+
 
 }
