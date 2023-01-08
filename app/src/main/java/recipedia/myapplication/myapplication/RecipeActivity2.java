@@ -7,7 +7,6 @@ import android.graphics.fonts.Font;
 import recipedia.myapplication.modelClass.AnalyzedInstruction;
 import recipedia.myapplication.modelClass.Result;
 
-import android.myapplication.myapplication.R;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;

@@ -7,7 +7,7 @@ import android.app.ProgressDialog;
 import recipedia.myapplication.modelClass.Result;
 import recipedia.myapplication.modelClass.Root;
 
-import android.myapplication.myapplication.R;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;

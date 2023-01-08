@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import recipedia.myapplication.modelClass.Result;
 
-import android.myapplication.myapplication.R;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

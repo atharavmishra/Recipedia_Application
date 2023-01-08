@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'android.myapplication.myapplication'
+    namespace 'recipedia.myapplication.myapplication'
     compileSdk 32
 
     defaultConfig {
-        applicationId "android.myapplication.myapplication"
+        applicationId "recipedia.myapplication.myapplication"
         minSdk 21
         targetSdk 32
         versionCode 1

@@ -23,7 +23,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RecipeActivity"
+            android:name=".RecipeActivity2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
