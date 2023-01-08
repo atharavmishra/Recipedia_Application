@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity{
     CheckBox chck;
     private ArrayList<Result> arraylist = new ArrayList<Result>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity{
         getSupportActionBar().hide();
         if(CheckNetwork.isInternetAvailable(this)) //returns true if internet available
         {
+            ProgressDialog pd = new ProgressDialog(MainActivity.this);
             edittext = findViewById(R.id.edittext);
             search = findViewById(R.id.search);
             recyclerview = findViewById(R.id.recyclerview);
@@ -61,8 +63,10 @@ public class MainActivity extends AppCompatActivity{
 
                         Toast.makeText(getApplicationContext(), "Please Enter something", Toast.LENGTH_LONG).show();
                     } else {
-
+                        pd.setMessage("loading");
+                        pd.show();
                         getrecipe(query);
+                        pd.hide();
                     }
                 }
             });
@@ -79,14 +83,12 @@ public class MainActivity extends AppCompatActivity{
         APIutilities.getAPIinterface().getImage2("61a2ba9ae7794bbe914353e4ce889564", true, query).enqueue(new Callback<Root>() {
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
-                ProgressDialog pd = new ProgressDialog(MainActivity.this);
-                pd.setMessage("loading");
-                pd.show();
+
                 arraylist.clear();
                 arraylist.addAll(response.body().getResults());
                 recyclerview.getRecycledViewPool().clear();
                 adapter.notifyDataSetChanged();
-                pd.hide();
+
                 Log.d(TAG, Integer.toString(response.code()));
                 Log.d("myTag", response.toString());
                 Log.d(TAG, Integer.toString(response.code())+(response.raw().request().url()).toString());
