@@ -1,4 +1,4 @@
-package android.myapplication.myapplication;
+package recipedia.myapplication.myapplication;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

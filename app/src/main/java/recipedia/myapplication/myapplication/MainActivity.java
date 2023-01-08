@@ -1,18 +1,18 @@
-package android.myapplication.myapplication;
+package recipedia.myapplication.myapplication;
 
 import static android.content.ContentValues.TAG;
 
 import android.app.ProgressDialog;
-import android.content.SharedPreferences;
-import android.myapplication.modelClass.Result;
-import android.myapplication.modelClass.Root;
+
+import recipedia.myapplication.modelClass.Result;
+import recipedia.myapplication.modelClass.Root;
+
+import android.myapplication.myapplication.R;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;

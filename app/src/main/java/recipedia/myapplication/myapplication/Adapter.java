@@ -1,14 +1,13 @@
-package android.myapplication.myapplication;
+package recipedia.myapplication.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.myapplication.modelClass.Result;
-import android.util.Log;
+import recipedia.myapplication.modelClass.Result;
+
+import android.myapplication.myapplication.R;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 

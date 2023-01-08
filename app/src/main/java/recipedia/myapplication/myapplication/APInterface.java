@@ -1,12 +1,9 @@
-package android.myapplication.myapplication;
+package recipedia.myapplication.myapplication;
 
-import static android.myapplication.myapplication.APIutilities.Authkey;
-
-import android.myapplication.modelClass.Root;
+import recipedia.myapplication.modelClass.Root;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.Query;
 
 public interface APInterface {

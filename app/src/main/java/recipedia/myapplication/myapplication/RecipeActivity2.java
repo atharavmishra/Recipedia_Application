@@ -1,12 +1,13 @@
-package android.myapplication.myapplication;
+package recipedia.myapplication.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.fonts.Font;
-import android.myapplication.modelClass.AnalyzedInstruction;
-import android.myapplication.modelClass.Result;
+import recipedia.myapplication.modelClass.AnalyzedInstruction;
+import recipedia.myapplication.modelClass.Result;
+
+import android.myapplication.myapplication.R;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -16,8 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 

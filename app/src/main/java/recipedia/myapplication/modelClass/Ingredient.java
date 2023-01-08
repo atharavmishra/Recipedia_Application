@@ -1,4 +1,4 @@
-package android.myapplication.modelClass;
+package recipedia.myapplication.modelClass;
 
 import android.os.Parcel;
 import android.os.Parcelable;

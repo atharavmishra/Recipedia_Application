@@ -1,4 +1,4 @@
-package android.myapplication.myapplication;
+package recipedia.myapplication.myapplication;
 
 import android.content.Context;
 
